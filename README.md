@@ -1,7 +1,7 @@
 # DNAInfo Neighborhood Mapping Analysis
 
 DNAInfo recently asked Chicagoans to draw what they thought were the boundaries
-of their neighborhood: [This is Where Chicagoans Say The Borders of Their Neighborhoods Are](This is Where Chicagoans Say The Borders of Their Neighborhoods Are)
+of their neighborhood: [This is Where Chicagoans Say The Borders of Their Neighborhoods Are](https://www.dnainfo.com/chicago/20150928/loop/this-is-where-chicagoans-say-borders-of-their-neighborhoods-are)
 
 Currently the Python script pulls the TopoJSON and GeoJSON from DNAInfo's site,
 to make it possible to analyze which neighborhoods have the most responses, as well

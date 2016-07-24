@@ -11,6 +11,17 @@ var neighborhoodLayer;
   map.addLayer(osm);
   map.setView([41.907477, -87.685913], 10);
 
+  var legend = L.control({position: 'bottomleft'});
+  legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML += "<b>Neighborhood:</b> <span id='neighbName'>Select a Neighborhood</span><br>" +
+                  "<b>Overlap:</b> <span id='overlapPct'>%</span><br>" +
+                  "<b>Responses:</b> <span id='respCount'></span><br>" +
+                  "<small>Source: <a href='https://www.dnainfo.com/chicago/20150928/loop/this-is-where-chicagoans-say-borders-of-their-neighborhoods-are'>DNAInfo</a></small>";
+    return div;
+  };
+  legend.addTo(map);
+
   neighborhoodLayer = L.geoJson().addTo(map);
 
   var xhr = new XMLHttpRequest();
@@ -32,6 +43,19 @@ function displayNeighborhood(neighborhood) {
     }
   }).addTo(map);
   map.fitBounds(neighborhoodLayer.getBounds());
+
+  var neighbLegend = document.getElementById("neighbName");
+  var overlapLegend = document.getElementById("overlapPct");
+  var countLegend = document.getElementById("respCount");
+
+  for (var i = 0; i < neighbData.length; ++i) {
+    if (neighbData[i].neighborhood === neighborhood) {
+      neighbLegend.innerText = neighbData[i].clean_neighborhood;
+      overlapLegend.innerText = (neighbData[i].overlap * 100).toFixed(2).toString() + "%";
+      countLegend.innerText = neighbData[i].count;
+      break;
+    }
+  }
 }
 
 function loadNeighborhoodData() {

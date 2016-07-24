@@ -1,6 +1,4 @@
 html, body {
-  height: 100%;
-  width: 100%;
   font-family: "Helvetica Neue", Verdana, "Verdana Ref", sans-serif;
 }
 
@@ -16,27 +14,70 @@ html, body {
 }
 
 .table-container {
-  width: 50%;
+  width: 45%;
+  height: 650px;
   float: right;
+  padding: 5px;
 }
 
-h2 {
+.table-container h3 {
   text-align: center;
 }
 
-.legend label,
-.legend span {
-  display:block;
-  float:left;
-  height:15px;
-  width:20%;
-  text-align:center;
-  font-size:9px;
-  color:#808080;
+.table-container table {
+  width: 100%;
 }
 
-table {
+tbody, thead {
   display: block;
-  height: 500px;
-  overflow-y: auto;
+}
+
+thead {
+  background-color: grey;
+  color: white;
+}
+
+tbody {
+  background-color: lightgrey;
+  border-spacing: 2px;
+}
+
+thead tr, tbody tr {
+  display: flex;
+}
+
+thead tr td, tbody tr td {
+  text-align: center;
+}
+
+.table-container thead tr td:nth-child(1),
+.table-container tbody tr td:nth-child(1) {
+  width: 50%;
+}
+.table-container thead tr td:nth-child(2),
+.table-container tbody tr td:nth-child(2) {
+  width: 25%;
+}
+.table-container thead tr td:nth-child(3),
+.table-container tbody tr td:nth-child(3) {
+  width: 25%;
+}
+
+.table-container tbody tr {
+  background-color: #e7e7e7;
+}
+
+.table-container tbody tr:nth-of-type(odd) {
+  background-color: #c4c4c4;
+}
+
+tbody {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.legend {
+  background-color: #c4c4c4;
+  padding: 5px;
 }
