@@ -16,4 +16,7 @@ the `neighborhood` property listing each polygon's respective neighborhood.
 Must have `wget` installed. If you're using a Mac, you can use Homebrew to install
 it with `brew install wget`.
 
+To run the visualization locally, you'll need Jekyll, then run `jekyll serve` and
+the site will be accessible at localhost:4000/dnainfo_neighborhoods
+
 All information comes from [DNAInfo Chicago](https://www.dnainfo.com/chicago/)

@@ -1,5 +1,6 @@
 html, body {
-  font-family: "Helvetica Neue", Verdana, "Verdana Ref", sans-serif;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-weight: 300;
 }
 
 .map-container {
@@ -37,11 +38,6 @@ thead {
   color: white;
 }
 
-tbody {
-  background-color: lightgrey;
-  border-spacing: 2px;
-}
-
 thead tr, tbody tr {
   display: flex;
 }
@@ -71,8 +67,12 @@ thead tr td, tbody tr td {
   background-color: #c4c4c4;
 }
 
+.table-container tbody tr:hover {
+  background-color: #a3a3a3;;
+}
+
 tbody {
-    height: 500px;
+    height: 450px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -80,4 +80,14 @@ tbody {
 .legend {
   background-color: #c4c4c4;
   padding: 5px;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-weight: 300;
+}
+
+@media (max-width:750px) {
+  .table-container,
+  .map-container {
+    float: left;
+    width: 100%;
+  }
 }

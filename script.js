@@ -6,7 +6,7 @@ var neighborhoodLayer;
 (function(){
   map = L.map('map');
   var osmUrl='http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png';
-  var osmAttrib='Data from <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors. Tiles from <a href="http://www.thunderforest.com/transport/">Andy Allan</a>';
+  var osmAttrib='Credit: <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>, <a href="http://www.thunderforest.com/transport/">Andy Allan</a>';
   var osm = new L.TileLayer(osmUrl, {minZoom: 10, maxZoom: 18, attribution: osmAttrib});
   map.addLayer(osm);
   map.setView([41.907477, -87.685913], 10);
@@ -26,7 +26,7 @@ var neighborhoodLayer;
 
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("load", loadNeighborhoodData);
-  xhr.open("GET", "/neighborhood_data.geojson");
+  xhr.open("GET", siteBase + "/neighborhood_data.geojson");
   xhr.send();
 })();
 

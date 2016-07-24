@@ -1,20 +1,24 @@
+---
+title: DNAInfo Neighborhood Boundary Agreement
+---
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DNAInfo Neighborhood Agreement</title>
+    <title>DNAInfo Neighborhood Boundaries</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset='utf-8' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
     <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="map-container">
-        <div id="map"></div>
-      </div>
       <div class="table-container">
-        <h3>Neighborhood Boundary Agreement</h3>
+        <h3>DNAInfo Neighborhood Boundary Agreement</h3>
+        <p>Percentage overlap and number of responses for submissions to <a href="https://www.dnainfo.com/chicago/20150928/loop/this-is-where-chicagoans-say-borders-of-their-neighborhoods-are">
+          DNAInfo's neighborhood boundary mapper</a>. Click a neighborhood row to see its results displayed on the map.</p>
         <table>
           <thead>
             <tr>
@@ -27,8 +31,14 @@
           </tbody>
         </table>
       </div>
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
     </div>
   </body>
-  <script type="text/javascript" src="neighborhood_data.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script>
+    var siteBase = "{{ site.baseurl }}";
+  </script>
+  <script type="text/javascript" src="{{ site.baseurl }}/neighborhood_data.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/script.js"></script>
 </html>
